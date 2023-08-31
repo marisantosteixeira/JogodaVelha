@@ -1,5 +1,15 @@
 {
   "dependencies": {
     "serve": "^14.2.1"
-  }
+  },
+  "name": "jogodavelha",
+  "version": "1.0.0",
+  "description": "jogo da velha ",
+  "main": "sw.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mariana Santos Teixeira",
+  "license": "ISC"
 }

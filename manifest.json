@@ -1,0 +1,23 @@
+{
+    "name": "JogodaVelha",
+    "short_name": "velha",
+    "icons": [
+        {
+            "src": "images/image256px.png",
+            "sizes": "256x256",
+            "type": "image/png",
+           "purpose": "any maskable"
+        },
+        {
+            "src": "images/image512px.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "lang": "pt-BR",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "white",
+    "theme_color": "white"
+}
