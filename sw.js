@@ -1,4 +1,4 @@
-let cacheName = "renatotrucoeimc";
+let cacheName = "JogodaVelha";
 let filesToCache = ["/", "/index.html", "/css/style.css", "/js/main.js", "/js/script.js" ];
 
 self.addEventListener("install",(e) => {
