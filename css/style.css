@@ -19,14 +19,14 @@ main{
     gap: 5px;
 }
 
-h{
+h1{
     text-align: center;
+    color: hotpink;
 }
 
 hr{
-    font-weight: bold;
     height: 3px;
-    background: black;
+    background: aqua;
     margin-bottom: 10px;
 }
 
@@ -37,6 +37,7 @@ hr{
     cursor: pointer;
     font-size: 50px;
     background: white;
+    color: pink;
 }
 
 .velha{

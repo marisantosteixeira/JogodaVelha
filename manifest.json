@@ -3,13 +3,13 @@
     "short_name": "velha",
     "icons": [
         {
-            "src": "images/image256px.png",
+            "src": "images/img1.png",
             "sizes": "256x256",
             "type": "image/png",
            "purpose": "any maskable"
         },
         {
-            "src": "images/image512px.png",
+            "src": "images/img2.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
