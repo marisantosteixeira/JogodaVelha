@@ -1,7 +1,7 @@
  const currentPlayer = document.querySelector(".currentPlayer");
 
-let clicar;
-let jogadores = "M";
+let selected;
+let player = "M";
 
 let linhas = [
 [1, 2, 3],
@@ -13,50 +13,50 @@ let linhas = [
 [3, 5, 7],
 ];
 
-function inicar() {
-    clicar =[];
+function init() {
+    selected =[];
 
-    currentPlayer.innerHTML = 'vez do: $(jogadores)';
+    currentPlayer.innerHTML = 'vez de: $(player)';
     document.querySelectorAll(".velha button").forEach((item) => {
         item.innerHTML = "";
         item.addEventListener("click", newMove);
     });
 }
 
-iniciar();
+init();
 
 function newMove(e) {
     const index = e.target.getAttribute("data-i");
-    e.target.innerHTML = jogadores;
+    e.target.innerHTML = player;
     e.target.removeEventListener("click", newMove);
-    clicar[index] = jogadores;
+    selected[index] = player;
 
-    setTempoesgotado(() => {
+    setTimeout(() => {
         check();
     }, [100]);
 
-    jogadores = jogadores === "M" ? "O" : "M";
-    currentPlayer.innerHTML = 'vez de: $(jogadores)';
+    player = player === "M" ? "O" : "M";
+    currentPlayer.innerHTML = `vez de: $(player)`;
 }
 
-function marcar() {
-    let jogadoresLastMove = jogadores === "M" ? "O" : "M";
+function check() {
+    let playerLastMove = jogadores === "M" ? "O" : "M";
 
-    const items = clicar 
+    const items = selected 
     .map((item, i) => [item, i])
-    .filter((item) => item[0] === jogadoresLastMove)
+    .filter((item) => item[0] === playerLastMove)
     .map((item) => item[1]);
 
     for (pos of positions) {
         if (pos.every((item) => items.includes(item))){
-            alert(" venceu o jogador ' " + jogadoresLastMove + " ' ganhou");
-            iniciar();
+            alert(" venceu o jogador ' " + playerLastMove + " ' ganhou");
+            init();
             return;
         }
     }
-    if (clicar.filter((item) => item).length === 9) {
+    if (selected.filter((item) => item).length === 9) {
         alert("empatou");
-        inicar();
+        init();
         return;
     }
 }
