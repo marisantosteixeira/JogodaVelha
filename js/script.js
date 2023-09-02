@@ -1,62 +1,66 @@
- const currentPlayer = document.querySelector(".currentPlayer");
+const currentJogadores = document.querySelector(".currentJogadores");
 
 let selected;
-let player = "M";
+let jogadores = "X";
 
-let linhas = [
-[1, 2, 3],
-[4, 5, 6],
-[7, 8, 9],
-[1, 4, 7],
-[2, 5, 8],
-[3, 6, 9],
-[3, 5, 7],
+let positions = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [1, 4, 7],
+  [2, 5, 8],
+  [3, 6, 9],
+  [1, 5, 9],
+  [3, 5, 7],
 ];
 
 function init() {
-    selected =[];
+  selected = [];
 
-    currentPlayer.innerHTML = 'vez de: $(player)';
-    document.querySelectorAll(".velha button").forEach((item) => {
-        item.innerHTML = "";
-        item.addEventListener("click", newMove);
-    });
+  currentJogadores.innerHTML = `JOGADOR DA VEZ: ${jogadores}`;
+
+  document.querySelectorAll(".velha button").forEach((item) => {
+    item.innerHTML = "";
+    item.addEventListener("click", newMove);
+  });
 }
 
 init();
 
 function newMove(e) {
-    const index = e.target.getAttribute("data-i");
-    e.target.innerHTML = player;
-    e.target.removeEventListener("click", newMove);
-    selected[index] = player;
+  const index = e.target.getAttribute("data-i");
+  e.target.innerHTML = jogadores;
+  e.target.removeEventListener("click", newMove);
+  selected[index] = jogadores;
 
-    setTimeout(() => {
-        check();
-    }, [100]);
+  setTimeout(() => {
+    check();
+  }, [100]);
 
-    player = player === "M" ? "O" : "M";
-    currentPlayer.innerHTML = `vez de: $(player)`;
+  jogadores = jogadores === "X" ? "O" : "X";
+  currentJogadores.innerHTML = `JOGADOR DA VEZ: ${jogadores}`;
 }
 
 function check() {
-    let playerLastMove = jogadores === "M" ? "O" : "M";
+  let jogadoresLastMove = jogadores === "X" ? "O" : "X";
 
-    const items = selected 
+  const items = selected
     .map((item, i) => [item, i])
-    .filter((item) => item[0] === playerLastMove)
+    .filter((item) => item[0] === jogadoresLastMove)
     .map((item) => item[1]);
 
-    for (pos of positions) {
-        if (pos.every((item) => items.includes(item))){
-            alert(" venceu o jogador ' " + playerLastMove + " ' ganhou");
-            init();
-            return;
-        }
+  for (pos of positions) {
+    if (pos.every((item) => items.includes(item))) {
+      document.write("O JOGADOR '" + jogadoresLastMove + "' GANHOU!");
+      init();
+      return;
     }
-    if (selected.filter((item) => item).length === 9) {
-        alert("empatou");
-        init();
-        return;
-    }
+  }
+
+  if (selected.filter((item) => item).length === 9) {
+    document.write("DEU EMPATE!");
+    init();
+    return;
+
+  }
 }
