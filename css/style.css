@@ -20,19 +20,14 @@ main{
 
 h1{
     text-align: center;
-    color: rgb(27, 231, 27);
+    color: white;
 }
-
 h2{ 
-    color: rgb(27, 231, 27);
+    color: white;
     text-align: center;
   }
 
-hr{
-    height: 3px;
-    background: rgb(8, 63, 245);
-    margin-bottom: 10px;
-}
+
 
 .velha button{
     width: 100x;
@@ -41,7 +36,7 @@ hr{
     cursor: pointer;
     font-size: 50px;
     background: white;
-    color: rgb(35, 128, 55);
+    color:rgb(32, 114, 221) ;
     
 }
 
