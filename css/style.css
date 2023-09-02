@@ -3,9 +3,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: white;
+    background-image: url("/images/img2.png");
 }
-
 *{
     margin: 0;
     padding: 0;
@@ -21,12 +20,17 @@ main{
 
 h1{
     text-align: center;
-    color: hotpink;
+    color: rgb(27, 231, 27);
 }
+
+h2{ 
+    color: rgb(27, 231, 27);
+    text-align: center;
+  }
 
 hr{
     height: 3px;
-    background: aqua;
+    background: rgb(8, 63, 245);
     margin-bottom: 10px;
 }
 
@@ -37,11 +41,11 @@ hr{
     cursor: pointer;
     font-size: 50px;
     background: white;
-    color: pink;
+    color: rgb(35, 128, 55);
+    
 }
 
 .velha{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-  
